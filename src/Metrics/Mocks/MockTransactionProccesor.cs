@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Transactions;
-using BankSystem.Core.interfaces;
+using System.Threading;
+using BankSystem.Core.Interfaces;
 using BankSystem.Core.Models;
 
 namespace BankSystem.Metrics.Mocks
 {
-    public class mockTransactionProcessor : ITransactionProcessor
+    public class MockTransactionProcessor : ITransactionProcessor
     {
     public void ProcessTransaction(IEnumerable<Transaction> transactions, int threadCount)
     {
@@ -15,7 +15,7 @@ namespace BankSystem.Metrics.Mocks
         int baseTime =  count * 1;
         int simulatedTime = (baseTime / threadCount) + (threadCount * 5);
 
-        ThreadSleep(simulatedTime);
+        Thread.Sleep(simulatedTime);
     }
     }
 }
