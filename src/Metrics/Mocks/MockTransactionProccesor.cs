@@ -9,7 +9,7 @@ namespace BankSystem.Metrics.Mocks
 {
     public class MockTransactionProcessor : ITransactionProcessor
     {
-    public void ProcessTransaction(IEnumerable<Transaction> transactions, int threadCount)
+    public void ProcessTransactions(IEnumerable<Transaction> transactions, int threadCount)
     {
         int count = transactions.Count();
         int baseTime =  count * 1;
