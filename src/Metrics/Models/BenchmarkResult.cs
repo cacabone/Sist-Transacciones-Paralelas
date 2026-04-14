@@ -9,7 +9,7 @@ namespace BankSystem.Metrics.Models
         public int TransactionVolume { get; set;}
         public TimeSpan ExecutionTime { get; set;}
         public double Speedup { get; set;}
-        public double efficiency { get; set;}
-        public int coallisions { get; set;}
+        public double Efficiency { get; set;}
+        public int Collisions { get; set;}
     }
 }

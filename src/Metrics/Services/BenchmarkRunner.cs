@@ -41,8 +41,8 @@ namespace BankSystem.Metrics.Services
                 TransactionVolume = volume,
                 ExecutionTime =  secTime,
                 Speedup = 1.0,
-                efficiency = 1.0,
-                coallisions = 0
+                Efficiency = 1.0,
+                Collisions = 0
             });
 
             int[] threadConfigs = { 2, 4, 8 };
@@ -65,8 +65,8 @@ namespace BankSystem.Metrics.Services
                 TransactionVolume = volume,
                 ExecutionTime =  parTime,
                 Speedup = sp,
-                efficiency = ef,
-                coallisions = 0
+                Efficiency = ef,
+                Collisions = 0
                 
             });
 
