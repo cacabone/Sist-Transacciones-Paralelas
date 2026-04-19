@@ -6,6 +6,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Core\BankSystem.Core.csproj" />
-		<ProjectReference Include="..\DataLayer\BankSystem.DataLayer.csproj" />
+		<ProjectReference Include="..\BankSystem.Data\BankSystem.Data.csproj" />
+		<ProjectReference Include="..\ParallelProcessing\BankSystem.ParallelProcessing.csproj" />
 	</ItemGroup>
 </Project>

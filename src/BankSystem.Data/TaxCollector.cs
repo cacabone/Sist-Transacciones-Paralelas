@@ -1,6 +1,6 @@
 using System.Threading;
 
-namespace BankSystem.Data
+namespace BankSystem.DataLayer
 {
     /// <summary>
     /// Variable global de recaudación fiscal.

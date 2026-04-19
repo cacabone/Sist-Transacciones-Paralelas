@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using BankSystem.Core.Models;
 using BankSystem.Core;
 
-namespace BankSystem.Data
+namespace BankSystem.DataLayer
 {
     /// <summary>
-    /// Generador de datos de prueba con semilla fija.
-    /// La semilla fija (42) garantiza que cada ejecución produce
-    /// exactamente los mismos datos — fundamental para que P4 pueda
-    /// comparar benchmarks de 2/4/8 hilos con condiciones idénticas.
+    /// Generador de datos de prueba optimizado para volúmenes masivos.
+    /// Soporta hasta 1 millón de transacciones con generación paralela.
     /// </summary>
     public class DataGenerator
     {
@@ -22,32 +21,56 @@ namespace BankSystem.Data
         private static readonly string[] Names =
         {
             "Ana Pérez", "Luis García", "María López", "Carlos Rodríguez",
-            "Sofía Martínez", "Juan Hernández", "Laura Díaz", "Pedro Sánchez",
-            "Valentina Torres", "Miguel Ramírez", "Isabel Flores", "Andrés Castro"
-        };
+     "Sofía Martínez", "Juan Hernández", "Laura Díaz", "Pedro Sánchez",
+     "Valentina Torres", "Miguel Ramírez", "Isabel Flores", "Andrés Castro"
+ };
 
         public DataGenerator()
         {
-            _rng = new Random(Seed);
+    _rng = new Random(Seed);
         }
 
         /// <summary>
-        /// Genera N cuentas bancarias con balance inicial aleatorio entre $500 y $50,000.
-        /// Los IDs son del formato "ACC-0001", "ACC-0002", etc. para fácil trazabilidad.
-        /// </summary>
-        public List<Account> GenerateAccounts(int count)
-        {
-            var accounts = new List<Account>(count);
+        /// Genera N cuentas bancarias con balance inicial aleatorio.
+        /// Optimizado con generación paralela para grandes volúmenes.
+      /// </summary>
+   public List<Account> GenerateAccounts(int count)
+{
+       var accounts = new List<Account>(count);
+ 
+            if (count > 10000)
+     {
+   // Paralelo para grandes volúmenes
+       var accountsArray = new Account[count];
+       object lockObj = new object();
+ int counter = 0;
 
-            for (int i = 1; i <= count; i++)
+  Parallel.For(0, count, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, i =>
+        {
+          var localRng = new Random(Seed + i); // RNG local por thread
+         var account = new Account
+      {
+   Id = $"ACC-{i + 1:D6}",
+      Owner = Names[localRng.Next(Names.Length)],
+         Balance = Math.Round((decimal)(localRng.NextDouble() * 49_500 + 500), 2)
+        };
+     accountsArray[i] = account;
+         });
+
+       accounts.AddRange(accountsArray);
+}
+       else
             {
-                accounts.Add(new Account
-                {
-                    Id      = $"ACC-{i:D4}",
-                    Owner   = Names[_rng.Next(Names.Length)],
-                    Balance = Math.Round((decimal)(_rng.NextDouble() * 49_500 + 500), 2)
-                    //         Balance entre $500.00 y $50,000.00
-                });
+     // Secuencial para pequeños volúmenes
+        for (int i = 1; i <= count; i++)
+           {
+     accounts.Add(new Account
+     {
+        Id = $"ACC-{i:D4}",
+            Owner = Names[_rng.Next(Names.Length)],
+ Balance = Math.Round((decimal)(_rng.NextDouble() * 49_500 + 500), 2)
+   });
+                }
             }
 
             return accounts;
@@ -55,84 +78,120 @@ namespace BankSystem.Data
 
         /// <summary>
         /// Genera N transacciones aleatorias distribuidas entre los 3 canales.
-        /// Los montos siguen rangos realistas por tipo de operación:
-        ///   - Depósito:      $10  – $5,000
-        ///   - Retiro:        $10  – $2,000
-        ///   - Transferencia: $50  – $10,000
-        ///
-        /// Las cuentas de origen/destino se escogen aleatoriamente del pool de IDs.
+        /// Optimizado con generación paralela para volúmenes masivos (hasta 1M).
+        /// 70% depósitos, 20% transferencias, 10% retiros para minimizar errores de fondos.
         /// </summary>
         public List<Transaction> GenerateTransactions(int count, List<Account> accounts)
         {
             if (accounts == null || accounts.Count < 2)
-                throw new ArgumentException("Se necesitan al menos 2 cuentas para generar transacciones.");
+       throw new ArgumentException("Se necesitan al menos 2 cuentas para generar transacciones.");
 
-            var transactions = new List<Transaction>(count);
+ var transactions = new List<Transaction>(count);
+  var channels = (TransactionChannel[])Enum.GetValues(typeof(TransactionChannel));
+     
+    if (count > 100000)
+ {
+          // Generación paralela para volúmenes masivos
+    var transactionsArray = new Transaction[count];
 
-            var channels = (TransactionChannel[])Enum.GetValues(typeof(TransactionChannel));
-            var types    = (TransactionType[])Enum.GetValues(typeof(TransactionType));
-
-            for (int i = 0; i < count; i++)
-            {
-                var type    = types[_rng.Next(types.Length)];
-                var channel = channels[_rng.Next(channels.Length)];
-                var amount  = GenerateAmount(type);
-
-                // Origen aleatorio
-                string sourceId = accounts[_rng.Next(accounts.Count)].Id;
-
-                // Destino: solo para transferencias, y diferente al origen
-                string destinationId = null;
-                if (type == TransactionType.Transferencia)
+  Parallel.For(0, count, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount }, i =>
                 {
-                    do
-                    {
-                        destinationId = accounts[_rng.Next(accounts.Count)].Id;
-                    } while (destinationId == sourceId);
-                }
+      var localRng = new Random(Seed + i); // RNG local por thread
+        
+        // 70% depósitos, 20% transferencias, 10% retiros
+             double typeRandom = localRng.NextDouble();
+   var type = typeRandom < 0.7 ? TransactionType.Deposito :
+      typeRandom < 0.9 ? TransactionType.Transferencia : TransactionType.Retiro;
 
-                transactions.Add(new Transaction
+      var channel = channels[localRng.Next(channels.Length)];
+      var amount = GenerateAmount(type, localRng);
+
+       string sourceId = accounts[localRng.Next(accounts.Count)].Id;
+                    string? destinationId = null;
+
+                    if (type == TransactionType.Transferencia)
+         {
+    do
+         {
+                 destinationId = accounts[localRng.Next(accounts.Count)].Id;
+       } while (destinationId == sourceId);
+    }
+
+           transactionsArray[i] = new Transaction
+        {
+       SourceAccountId = sourceId,
+ DestinationAccountId = destinationId,
+   Amount = amount,
+             Type = type,
+        Channel = channel,
+            };
+});
+
+     transactions.AddRange(transactionsArray);
+      }
+   else
+          {
+              // Generación secuencial para pequeños volúmenes
+              for (int i = 0; i < count; i++)
                 {
-                    // Id y Timestamp se auto-asignan en el constructor del modelo (P1)
-                    SourceAccountId      = sourceId,
-                    DestinationAccountId = destinationId,
-                    Amount               = amount,
-                    Type                 = type,
-                    Channel              = channel,
-                    // TaxApplied y TaxAmount los calculará P3 al procesar
-                });
-            }
+             double typeRandom = _rng.NextDouble();
+         var type = typeRandom < 0.7 ? TransactionType.Deposito :
+   typeRandom < 0.9 ? TransactionType.Transferencia : TransactionType.Retiro;
 
-            return transactions;
+        var channel = channels[_rng.Next(channels.Length)];
+           var amount = GenerateAmount(type, _rng);
+
+                    string sourceId = accounts[_rng.Next(accounts.Count)].Id;
+                    string? destinationId = null;
+
+                    if (type == TransactionType.Transferencia)
+           {
+             do
+          {
+         destinationId = accounts[_rng.Next(accounts.Count)].Id;
+           } while (destinationId == sourceId);
+  }
+
+    transactions.Add(new Transaction
+    {
+     SourceAccountId = sourceId,
+            DestinationAccountId = destinationId,
+   Amount = amount,
+             Type = type,
+              Channel = channel,
+           });
+       }
+  }
+
+    return transactions;
         }
 
-        /// <summary>
+  /// <summary>
         /// Genera montos realistas según el tipo de operación.
-        /// </summary>
-        private decimal GenerateAmount(TransactionType type)
-        {
+  /// </summary>
+   private decimal GenerateAmount(TransactionType type, Random rng)
+     {
             double raw = type switch
-            {
-                TransactionType.Deposito       => _rng.NextDouble() * 4_990 + 10,    // $10 – $5,000
-                TransactionType.Retiro         => _rng.NextDouble() * 1_990 + 10,    // $10 – $2,000
-                TransactionType.Transferencia  => _rng.NextDouble() * 9_950 + 50,    // $50 – $10,000
-                _                              => _rng.NextDouble() * 1_000 + 1
-            };
+       {
+     TransactionType.Deposito => rng.NextDouble() * 490 + 10,       // $10 – $500
+     TransactionType.Retiro => rng.NextDouble() * 190 + 10,           // $10 – $200
+       TransactionType.Transferencia => rng.NextDouble() * 490 + 50,   // $50 – $540
+     _ => rng.NextDouble() * 100 + 1
+ };
 
             return Math.Round((decimal)raw, 2);
         }
 
         /// <summary>
         /// Método de conveniencia: genera cuentas Y transacciones en un solo llamado.
-        /// Útil para P4 cuando necesita preparar escenarios de benchmark rápidamente.
-        /// </summary>
+     /// </summary>
         public (List<Account> Accounts, List<Transaction> Transactions) GenerateScenario(
             int accountCount,
-            int transactionCount)
-        {
-            var accounts     = GenerateAccounts(accountCount);
-            var transactions = GenerateTransactions(transactionCount, accounts);
-            return (accounts, transactions);
+    int transactionCount)
+   {
+  var accounts = GenerateAccounts(accountCount);
+       var transactions = GenerateTransactions(transactionCount, accounts);
+  return (accounts, transactions);
         }
     }
 }

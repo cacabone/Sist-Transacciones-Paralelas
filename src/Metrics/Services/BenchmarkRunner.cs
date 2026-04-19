@@ -16,7 +16,7 @@ namespace BankSystem.Metrics.Services
             _processor = processor;
         }
 
-        public List<BenchmarkResult> runBenchmarks(List<Transaction> transactions)
+        public List<BenchmarkResult> RunBenchmarks(List<Transaction> transactions)
         {
             if (transactions == null)
             {
@@ -28,6 +28,7 @@ namespace BankSystem.Metrics.Services
 
             Console.WriteLine($"\n[+] Iniciando Benchmark con {volume} transacciones...");
 
+            // Baseline: Sequential execution with 1 thread
             Console.WriteLine("[midiendo con 1 hilo]");
             Stopwatch swSec = Stopwatch.StartNew();
             _processor.ProcessTransactions(transactions, 1);
@@ -45,6 +46,7 @@ namespace BankSystem.Metrics.Services
                 Collisions = 0
             });
 
+            // Parallel execution with multiple thread configurations
             int[] threadConfigs = { 2, 4, 8 };
             foreach (int threads in threadConfigs)
             {
@@ -52,23 +54,22 @@ namespace BankSystem.Metrics.Services
                 Stopwatch swPar = Stopwatch.StartNew();
                 _processor.ProcessTransactions(transactions, threads);
                 swPar.Stop();
-            }
 
-            double parTime = swPar.Elapsed.totalMilliseconds;
+                double parTime = swPar.Elapsed.TotalMilliseconds;
 
-            double sp =  secTime / parTime;
-            double ef = sp / threads;
-            
-            results.Add(new BenchmarkResult
-            {
-                ThreadCount = threads,
-                TransactionVolume = volume,
-                ExecutionTime =  parTime,
-                Speedup = sp,
-                Efficiency = ef,
-                Collisions = 0
+                double sp =  secTime / parTime;
+                double ef = sp / threads;
                 
-            });
+                results.Add(new BenchmarkResult
+                {
+                    ThreadCount = threads,
+                    TransactionVolume = volume,
+                    ExecutionTime =  parTime,
+                    Speedup = sp,
+                    Efficiency = ef,
+                    Collisions = 0
+                });
+            }
 
             return results;
         }

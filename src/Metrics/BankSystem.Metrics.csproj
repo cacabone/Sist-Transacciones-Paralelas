@@ -7,5 +7,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Core\BankSystem.Core.csproj" />
 		<ProjectReference Include="..\Processing\BankSystem.Processing.csproj" />
+		<ProjectReference Include="..\BankSystem.Data\BankSystem.Data.csproj" />
 	</ItemGroup>
 </Project>

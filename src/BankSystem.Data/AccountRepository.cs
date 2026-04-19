@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using BankSystem.Core.Interfaces;
 using BankSystem.Core.Models;
 
-namespace BankSystem.Data
+namespace BankSystem.DataLayer
 {
     /// <summary>
     /// Repositorio central de cuentas bancarias.

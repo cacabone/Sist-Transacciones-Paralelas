@@ -1,0 +1,442 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.App\\BankSystem.App.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.App\\BankSystem.App.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.App\\BankSystem.App.csproj",
+        "projectName": "BankSystem.App",
+        "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.App\\BankSystem.App.csproj",
+        "packagesPath": "C:\\Users\\UserGPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.App\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UserGPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Metrics\\BankSystem.Metrics.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Metrics\\BankSystem.Metrics.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj",
+        "projectName": "BankSystem.Data",
+        "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj",
+        "packagesPath": "C:\\Users\\UserGPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UserGPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj",
+        "projectName": "BankSystem.Core",
+        "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj",
+        "packagesPath": "C:\\Users\\UserGPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UserGPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Metrics\\BankSystem.Metrics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Metrics\\BankSystem.Metrics.csproj",
+        "projectName": "BankSystem.Metrics",
+        "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Metrics\\BankSystem.Metrics.csproj",
+        "packagesPath": "C:\\Users\\UserGPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Metrics\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UserGPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\ParallelProcessing\\BankSystem.ParallelProcessing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\ParallelProcessing\\BankSystem.ParallelProcessing.csproj",
+        "projectName": "BankSystem.ParallelProcessing",
+        "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\ParallelProcessing\\BankSystem.ParallelProcessing.csproj",
+        "packagesPath": "C:\\Users\\UserGPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\ParallelProcessing\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UserGPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj",
+        "projectName": "BankSystem.Processing",
+        "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\BankSystem.Processing.csproj",
+        "packagesPath": "C:\\Users\\UserGPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Processing\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UserGPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\BankSystem.Data\\BankSystem.Data.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\Core\\BankSystem.Core.csproj"
+              },
+              "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\ParallelProcessing\\BankSystem.ParallelProcessing.csproj": {
+                "projectPath": "C:\\Users\\UserGPC\\source\\repos\\Sist-Transacciones-Paralelas2\\src\\ParallelProcessing\\BankSystem.ParallelProcessing.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
