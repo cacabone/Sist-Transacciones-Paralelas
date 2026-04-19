@@ -1,0 +1,16 @@
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\bin\Debug\net8.0\BankSystem.Data.deps.json
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\bin\Debug\net8.0\BankSystem.Data.dll
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\bin\Debug\net8.0\BankSystem.Data.pdb
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\bin\Debug\net8.0\BankSystem.Core.dll
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\bin\Debug\net8.0\BankSystem.Core.pdb
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.csproj.AssemblyReference.cache
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.AssemblyInfoInputs.cache
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.AssemblyInfo.cs
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.csproj.CoreCompileInputs.cache
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.sourcelink.json
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSyst.8961803D.Up2Date
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.dll
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\refint\BankSystem.Data.dll
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\BankSystem.Data.pdb
+C:\Users\UserGPC\source\repos\Sist-Transacciones-Paralelas2\src\BankSystem.Data\obj\Debug\net8.0\ref\BankSystem.Data.dll

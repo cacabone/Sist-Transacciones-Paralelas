@@ -1,4 +1,5 @@
 using BankSystem.Core.Models;
+using BankSystem.Core;
 
 namespace BankSystem.ParallelProcessing
 {
@@ -8,8 +9,8 @@ namespace BankSystem.ParallelProcessing
 
         public decimal Calculate(Transaction tx)
         {
-            // Ejemplo: solo canal electrónico paga impuesto
-            if (tx.Channel == TransactionChannel.Electronic)
+            // Se aplica impuesto a todas las transacciones por canal
+            if (tx.Channel == TransactionChannel.ViaElectronica)
             {
                 return tx.Amount * TAX_RATE;
             }
