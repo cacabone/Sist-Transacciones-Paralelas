@@ -13,7 +13,12 @@ namespace BankSystem.Metrics.Services
             if (filename == null)
                 filename = $"benchmark_results_{DateTime.Now:yyMMdd_HHmmss}.csv";
 
-            string rootpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "metrics", "results");
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string repoRoot = baseDir;
+            while (!File.Exists(Path.Combine(repoRoot, "BankSystem.sln")) && Directory.GetParent(repoRoot) != null)
+                repoRoot = Directory.GetParent(repoRoot)!.FullName;
+
+            string rootpath = Path.Combine(repoRoot, "metrics", "results");
             Directory.CreateDirectory(rootpath);
             string fullpath = Path.Combine(rootpath, filename);
 
