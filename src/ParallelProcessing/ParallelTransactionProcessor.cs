@@ -51,7 +51,7 @@ namespace BankSystem.ParallelProcessing
 
         private void ProcessTransfer(Transaction tx, decimal tax)
         {
-            // ⚠️ No es atómico (limitación del diseño actual)
+            //  No es atómico (limitación del diseño actual)
             _repository.UpdateBalance(tx.SourceAccountId, -(tx.Amount + tax));
             _repository.UpdateBalance(tx.DestinationAccountId, tx.Amount);
         }
