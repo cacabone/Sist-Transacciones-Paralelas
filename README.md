@@ -58,8 +58,8 @@ Los resultados CSV se exportan automaticamente a `/metrics/results/`.
 |---|---|---|
 | Robert Gabriel Nunez Matias | Lider | Core + App |
 | Emil Remy Lopez Hernandez | Desarrollador | Data Layer |
-| Jorge Luis Reynoso Frias | Desarrollador | Parallel Processing |
-| Jimmy Alexander Herrera | Desarrollador | Metrics |
+| Jimmy Alexander Herrera | Desarrollador | Parallel Processing |
+| Jorge Luis Reynoso Frias | Desarrollador | Metrics |
 
 ## Reglas de Trabajo
 
